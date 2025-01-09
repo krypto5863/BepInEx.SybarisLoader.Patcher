@@ -43,7 +43,8 @@ namespace BepInEx.SybarisLoader.Patcher
 
                 try
                 {
-                    assembly = Assembly.LoadFile(dll);
+                    //Fixes relative path error in newer .nets
+					assembly = Assembly.LoadFile(Path.GetFullPath(dll));
                 }
                 catch (Exception e)
                 {
