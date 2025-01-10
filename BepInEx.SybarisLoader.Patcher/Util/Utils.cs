@@ -45,7 +45,7 @@ namespace BepInEx.SybarisLoader.Patcher.Util
 
             try
             {
-                assembly = Assembly.LoadFile(path);
+                assembly = Assembly.LoadFile(Path.GetFullPath(path));
             }
             catch (Exception)
             {
